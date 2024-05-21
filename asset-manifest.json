@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Endsem-Project-Croma-Clone---EndSem-Projects-Croma---d4o4jfu5nlac/static/css/main.0221b77a.css",
+    "main.js": "/Endsem-Project-Croma-Clone---EndSem-Projects-Croma---d4o4jfu5nlac/static/js/main.a05d1720.js",
+    "index.html": "/Endsem-Project-Croma-Clone---EndSem-Projects-Croma---d4o4jfu5nlac/index.html",
+    "main.0221b77a.css.map": "/Endsem-Project-Croma-Clone---EndSem-Projects-Croma---d4o4jfu5nlac/static/css/main.0221b77a.css.map",
+    "main.a05d1720.js.map": "/Endsem-Project-Croma-Clone---EndSem-Projects-Croma---d4o4jfu5nlac/static/js/main.a05d1720.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0221b77a.css",
+    "static/js/main.a05d1720.js"
+  ]
+}
