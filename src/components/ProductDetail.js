@@ -56,7 +56,7 @@ const ProductDetail = () => {
           <h1 className="text-2xl text-[#F5F5F4] font-bold mb-2">
             {product.name}
           </h1>
-          <h2 className="text-xl text-[#E7E5E4] mb-4">${product.price}</h2>
+          <h2 className="text-xl text-[#E7E5E4] mb-4">₹{product.price}</h2>
           <div className="bg-[#27272A] p-4 rounded shadow-md">
             <h3 className="text-lg text-[#E7E5E4] font-semibold mb-2">
               Key Features

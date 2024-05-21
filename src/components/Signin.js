@@ -1,7 +1,64 @@
+// import { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import { useAuth } from "../contexts/AuthContext";
+
+// const Signin = () => {
+//   const { login } = useAuth();
+//   const [email, setEmail] = useState("");
+//   const [password, setPassword] = useState("");
+//   const [errorMessage, setErrorMessage] = useState("");
+//   const navigate = useNavigate();
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (!email || !password) {
+//       alert("All fields are required");
+//       return;
+//     }
+
+//     const myHeaders = new Headers();
+//     myHeaders.append("accept", "application/json");
+//     myHeaders.append("projectID", "d4o4jfu5nlac");
+//     myHeaders.append("Content-Type", "application/json");
+
+//     const raw = JSON.stringify({
+//       email,
+//       password,
+//       appType: "ecommerce",
+//     });
+
+//     const requestOptions = {
+//       method: "POST",
+//       headers: myHeaders,
+//       body: raw,
+//       redirect: "follow",
+//     };
+
+//     try {
+//       const response = await fetch(
+//         "https://academics.newtonschool.co/api/v1/user/login",
+//         requestOptions
+//       );
+//       const data = await response.json();
+//       if (data.status === "success") {
+//         login();
+//         navigate("/");
+//       } else {
+//         setErrorMessage(data.message);
+//         setTimeout(() => {
+//           setErrorMessage("");
+//         }, 5000);
+//       }
+//     } catch (error) {
+//       console.error(error);
+//     }
+//   };
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 
 const Signin = () => {
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -16,7 +73,7 @@ const Signin = () => {
 
     const myHeaders = new Headers();
     myHeaders.append("accept", "application/json");
-    myHeaders.append("projectID", "7ra5rfapg5fl");
+    myHeaders.append("projectID", "d4o4jfu5nlac");
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
@@ -34,11 +91,13 @@ const Signin = () => {
 
     try {
       const response = await fetch(
-        "https://academics.newtonschool.co/api/v1/user/signin",
+        "https://academics.newtonschool.co/api/v1/user/login",
         requestOptions
       );
       const data = await response.json();
       if (data.status === "success") {
+        const authToken = data.authToken;
+        login(authToken);
         navigate("/");
       } else {
         setErrorMessage(data.message);

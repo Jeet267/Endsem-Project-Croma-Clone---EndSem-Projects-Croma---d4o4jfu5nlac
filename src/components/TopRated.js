@@ -44,7 +44,7 @@ const TopRated = () => {
                 <h3 className="text-lg text-[#F5F5F4] font-semibold">
                   {product.name}
                 </h3>
-                <p className="text-[#E7E5E4]">${product.price}</p>
+                <p className="text-[#E7E5E4]">₹{product.price}</p>
               </Link>
             ))}
         </div>
